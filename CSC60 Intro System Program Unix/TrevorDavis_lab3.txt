@@ -1,0 +1,24 @@
+Script started on Wed 25 Sep 2019 02:12:31 PM PDT
+[davist@athena:21]> vim lab3.c[21Ga.out[K[21Ggcc lab3.c
+[davist@athena:22]> gcc lab3.c[21Gvim[31G[21Ga.out[K
+
+
+Trevor Davis, Lab 3.
+
+Jane went to the store.
+
+My friend is 22 years old.
+
+"So many books, so little time."
+-Frank Zappa
+
+The average = 246.2
+
+The average = 246.237
+
+The average = 2.46e+02
+
+[davist@athena:23]> exit
+exit
+
+Script done on Wed 25 Sep 2019 02:12:48 PM PDT

@@ -1,0 +1,16 @@
+Script started on Mon 09 Sep 2019 01:32:35 PM PDT
+[davist@athena:21]> gcc lab1.c
+[davist@athena:22]> a.out
+
+Lab 1. 
+
+Hello World.
+Hi, Trevor Davis. 
+
+...love one another, as I have loved you.
+-Jesus 
+
+[davist@athena:23]> exit
+exit
+
+Script done on Mon 09 Sep 2019 01:33:13 PM PDT

@@ -1,0 +1,100 @@
+Script started on Fri 06 Dec 2019 08:25:17 PM PST
+[davist@sp2:21]> gcc lab10.c -Wall
+[davist@sp2:22]> a.out
+csc60msh> cat Authors
+Argv 0 = cat
+Argv 1 = Authors
+Authors: Trevor Davis & Mario Palacios
+Child returned status: 0
+csc60msh> ls > lsout
+Argv 0 = ls
+Argv 1 = >
+Argv 2 = lsout
+Child returned status: 0
+csc60msh> cat lsout
+Argv 0 = cat
+Argv 1 = lsout
+a.out
+Authors
+execvp.c
+lab10.c
+lsout
+redir.c
+TrevorDavis_lab10.txt
+waitpid.c
+wcout
+Child returned status: 0
+csc60msh> ls > lsout > file1
+Argv 0 = ls
+Argv 1 = >
+Argv 2 = lsout
+Argv 3 = >
+Argv 4 = file1
+Error. Cannot output to more than one file.: Success
+Child returned status: 256
+csc60msh> cat foo.txt
+Argv 0 = cat
+Argv 1 = foo.txt
+cat: foo.txt: No such file or directory
+Child returned status: 256
+csc60msh> > lsout
+Argv 0 = >
+Argv 1 = lsout
+Error. No command entered: Success
+Child returned status: 256
+csc60msh> < lsout
+Argv 0 = <
+Argv 1 = lsout
+Error. No command entered.: Success
+Child returned status: 256
+csc60msh> wc < lsout
+Argv 0 = wc
+Argv 1 = <
+Argv 2 = lsout
+0 0 0
+Child returned status: 0
+csc60msh> wc < lsout <   > wcout
+Argv 0 = wc
+Argv 1 = <
+Argv 2 = lsout
+Argv 3 = >
+Argv 4 = wcout
+Child returned status: 0
+csc60msh> cat wcout
+Argv 0 = cat
+Argv 1 = wcout
+0 0 0
+Child returned status: 0
+csc60msh> wc < lsout < wcout
+Argv 0 = wc
+Argv 1 = <
+Argv 2 = lsout
+Argv 3 = <
+Argv 4 = wcout
+Error. Cannot input more than one file.: Success
+Child returned status: 256
+csc60msh> cd ../lab1
+Argv 0 = cd
+Argv 1 = ../lab1
+csc60msh> gcc lab1.c
+Argv 0 = gcc
+Argv 1 = lab1.c
+Child returned status: 0
+csc60msh> a.out
+Argv 0 = a.out
+
+Lab 1. 
+
+Hello World.
+Hi, Trevor Davis. 
+
+...love one another, as I have loved you.
+-Jesus 
+
+Child returned status: 0
+csc60msh> exit
+Argv 0 = exit
+[davist@sp2:23]> exit
+exit
+
+Script done on Fri 06 Dec 2019 08:28:05 PM PST

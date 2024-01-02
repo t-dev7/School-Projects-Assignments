@@ -1,0 +1,24 @@
+Script started on Fri 18 Oct 2019 11:08:13 PM PDT
+[davist@athena:21]> touch lab5.h
+[davist@athena:22]> make
+gcc -c lab5.c
+gcc -c compute.c
+gcc -lm -o lab5 lab5.o compute.o 
+[davist@athena:23]> lab5
+[davist@athena:24]> cat lab5.out
+
+Trevor Davis  Lab 5. 
+
+ Radius	    Area     Circumference  
+--------  --------  --------------- 
+   3.70     43.01        23.25  
+   6.80    145.27        42.73  
+   4.00     50.27        25.13  
+   5.60     98.52        35.19  
+  12.70    506.71        79.80  
+  45.60   6532.50       286.51  
+
+[davist@athena:25]> exit
+exit
+
+Script done on Fri 18 Oct 2019 11:08:47 PM PDT

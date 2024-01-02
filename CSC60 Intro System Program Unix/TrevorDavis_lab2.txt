@@ -1,0 +1,185 @@
+Script started on Thu 19 Sep 2019 11:41:46 AM PDT
+[davist@sp3:6]> is[K[Khistory -c
+[davist@sp3:7]> cd csc60
+~/csc60 
+[davist@sp3:8]> mkdir lab2
+mkdir: cannot create directory `lab2': File exists
+[davist@sp3:9]> cd lab2
+[davist@sp3:10]> pwd
+/gaia/class/student/davist/csc60/lab2
+[davist@sp3:11]> mkdir aaa
+mkdir: cannot create directory `aaa': File exists
+[davist@sp3:12]> cd aaa
+[davist@sp3:13]> pwd
+/gaia/class/student/davist/csc60/lab2/aaa
+[davist@sp3:14]> cd ..
+[davist@sp3:15]> pwd
+/gaia/class/student/davist/csc60/lab2
+[davist@sp3:16]> ls > file1
+[davist@sp3:17]> cat file1
+aaa/
+file1
+TrevorDavis_lab2.txt
+[davist@sp3:18]> less file1
+[?1049h[?1h=aaa/
+file1
+TrevorDavis_lab2.txt
+[7mfile1 (END) [27m[K[K[?1l>[?1049l[davist@sp3:19]> file *
+aaa:                  setgid directory
+file1:                ASCII text
+TrevorDavis_lab2.txt: empty
+[davist@sp3:20]> wc file1
+ 3  3 32 file1
+[davist@sp3:21]> wc *
+wc: aaa: Is a directory
+      0       0       0 aaa
+      3       3      32 file1
+      0       0       0 TrevorDavis_lab2.txt
+      3       3      32 total
+[davist@sp3:22]> grep lab file1
+TrevorDavis_lab2.txt
+[davist@sp3:23]> cp file1 file2
+[davist@sp3:24]> ls
+aaa/  file1  file2  TrevorDavis_lab2.txt
+[davist@sp3:25]> cd aaa
+[davist@sp3:26]> cp ../file1 .
+[davist@sp3:27]> ls
+file1
+[davist@sp3:28]> mv file1 file2
+[davist@sp3:29]> ls
+file2
+[davist@sp3:30]> mv ../file1 .
+[davist@sp3:31]> cd ..
+[davist@sp3:32]> ls
+aaa/  file2  TrevorDavis_lab2.txt
+[davist@sp3:33]> cd aaa
+[davist@sp3:34]> ls
+file1  file2
+[davist@sp3:35]> cmp file1 file2
+[davist@sp3:36]> ls > aaalist
+[davist@sp3:37]> cmp file1 aaalist
+file1 aaalist differ: byte 4, line 1
+[davist@sp3:38]> rm file1
+[davist@sp3:39]> diff file1 aaalist
+diff: file1: No such file or directory
+[davist@sp3:40]> ls
+aaalist  file2
+[davist@sp3:41]> ps u
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+davist   17411  0.0  0.0 116752  2036 pts/0    Ss   11:16   0:00 -csh
+davist   18194  0.0  0.0 107132   832 pts/0    S+   11:41   0:00 script TrevorDavis_lab2.txt
+davist   18196  0.0  0.0 107644   400 pts/0    S+   11:41   0:00 script TrevorDavis_lab2.txt
+davist   18197  0.0  0.0 110380  1796 pts/1    Ss   11:41   0:00 -sh -i
+davist   18472  0.0  0.0 114488  1288 pts/1    R+   11:49   0:00 ps u
+[davist@sp3:42]> ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  4646 18197 18196  0  80   0 - 27595 sys_rt pts/1    00:00:00 csh
+0 R  4646 18489 18197  0  80   0 - 27037 -      pts/1    00:00:00 ps
+[davist@sp3:43]> !!
+ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  4646 18197 18196  0  80   0 - 27595 sys_rt pts/1    00:00:00 csh
+0 R  4646 18497 18197  0  80   0 - 27035 -      pts/1    00:00:00 ps
+[davist@sp3:44]> history
+     7	11:42	cd csc60
+     8	11:42	mkdir lab2
+     9	11:42	cd lab2
+    11	11:42	mkdir aaa
+    15	11:43	pwd
+    16	11:43	ls > file1
+    17	11:43	cat file1
+    18	11:43	less file1
+    19	11:43	file *
+    20	11:44	wc file1
+    21	11:44	wc *
+    22	11:45	grep lab file1
+    23	11:45	cp file1 file2
+    26	11:46	cp ../file1 .
+    28	11:46	mv file1 file2
+    30	11:46	mv ../file1 .
+    31	11:46	cd ..
+    33	11:47	cd aaa
+    35	11:48	cmp file1 file2
+    36	11:48	ls > aaalist
+    37	11:48	cmp file1 aaalist
+    38	11:49	rm file1
+    39	11:49	diff file1 aaalist
+    40	11:49	ls
+    41	11:49	ps u
+    43	11:50	ps -l
+    44	11:50	history
+[davist@sp3:45]> cd ../..
+[davist@sp3:46]> pwd
+/gaia/class/student/davist/csc60
+[davist@sp3:47]> cd lab1
+[davist@sp3:48]> head lab1.c
+
+/*----------------------------*/
+/*Trevor Davis*/
+/*Lab 1*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void)
+{
+[davist@sp3:49]> q
+q: Command not found.
+[davist@sp3:50]> tail lab1.c
+{
+        printf("\nLab 1. \n\n");
+        printf("Hello World.\n");
+        printf("Hi, Trevor Davis. \n\n");
+        printf("...love one another, as I have loved you.\n");
+        printf("-Jesus \n\n");
+
+        return EXIT_SUCCESS;
+}
+/*------------------------------*/
+[davist@sp3:51]> ls -al | less
+[?1049h[?1h=total 32
+drwx--S--- 2 davist@ecs.csus.edu stdcsc 4096 Sep  9 13:32 ./
+drwx--S--- 4 davist@ecs.csus.edu stdcsc 4096 Sep 19 11:05 ../
+-rwx------ 1 davist@ecs.csus.edu stdcsc 4774 Sep  9 13:32 a.out*
+-rw------- 1 davist@ecs.csus.edu stdcsc  348 Sep  9 13:20 lab1
+-rw------- 1 davist@ecs.csus.edu stdcsc  390 Sep  9 13:30 lab1.c
+-rw------- 1 davist@ecs.csus.edu stdcsc  295 Sep  9 13:33 TrevorDavis_lab1.txt
+-rw------- 1 davist@ecs.csus.edu stdcsc   63 Sep  9 13:06 .vimrc
+[7m(END) [27m[K[K[?1l>[?1049l[davist@sp3:52]> history
+     7	11:42	cd csc60
+     8	11:42	mkdir lab2
+     9	11:42	cd lab2
+    11	11:42	mkdir aaa
+    16	11:43	ls > file1
+    17	11:43	cat file1
+    18	11:43	less file1
+    19	11:43	file *
+    20	11:44	wc file1
+    21	11:44	wc *
+    22	11:45	grep lab file1
+    23	11:45	cp file1 file2
+    26	11:46	cp ../file1 .
+    28	11:46	mv file1 file2
+    30	11:46	mv ../file1 .
+    31	11:46	cd ..
+    33	11:47	cd aaa
+    35	11:48	cmp file1 file2
+    36	11:48	ls > aaalist
+    37	11:48	cmp file1 aaalist
+    38	11:49	rm file1
+    39	11:49	diff file1 aaalist
+    40	11:49	ls
+    41	11:49	ps u
+    43	11:50	ps -l
+    45	11:51	cd ../..
+    46	11:51	pwd
+    47	11:51	cd lab1
+    48	11:51	head lab1.c
+    49	11:52	q
+    50	11:52	tail lab1.c
+    51	11:52	ls -al | less
+    52	11:53	history
+[davist@sp3:53]> exit
+exit
+
+Script done on Thu 19 Sep 2019 11:53:30 AM PDT

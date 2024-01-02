@@ -1,0 +1,53 @@
+Script started on Wed 20 Nov 2019 12:06:29 PM PST
+[davist@sp1:21]> gcc lab9.c -Wall
+[davist@sp1:22]> a.out
+csc60msh> exit
+Argc = 1
+Argv 0 = exit
+[davist@sp1:23]> script TrevorDavis_lab9.txt
+Script started, file is TrevorDavis_lab9.txt
+[davist@sp1:21]> cat Authors
+Authors: Trevor Davis & Mario Palacios
+[davist@sp1:22]> gcc lab9.c -Wall
+[davist@sp1:23]> a.out
+csc60msh> 
+Argc = 0
+csc60msh>  
+Argc = 0
+csc60msh> pwd
+Argc = 1
+Argv 0 = pwd
+/gaia/class/student/davist/csc60/lab9
+csc60msh> cd ..
+Argc = 2
+Argv 0 = cd
+Argv 1 = ..
+csc60msh> pwd
+Argc = 1
+Argv 0 = pwd
+/gaia/class/student/davist/csc60
+csc60msh> cd lab9
+Argc = 2
+Argv 0 = cd
+Argv 1 = lab9
+csc60msh> pwd
+Argc = 1
+Argv 0 = pwd
+/gaia/class/student/davist/csc60/lab9
+csc60msh> cd
+Argc = 1
+Argv 0 = cd
+csc60msh> pwd
+Argc = 1
+Argv 0 = pwd
+/gaia/class/student/davist
+csc60msh> exit
+Argc = 1
+Argv 0 = exit
+[davist@sp1:24]> exit
+exit
+Script done, file is TrevorDavis_lab9.txt
+[davist@sp1:24]> exit
+exit
+
+Script done on Wed 20 Nov 2019 12:08:36 PM PST
