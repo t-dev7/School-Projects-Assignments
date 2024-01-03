@@ -1,0 +1,131 @@
+CREATE SCHEMA RateMyHornet
+CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE RateMyHornet;
+
+CREATE TABLE PROFESSOR( 
+ ID		INT			NOT NULL,
+ first	VARCHAR(15),
+ last	VARCHAR(15),
+ PRIMARY KEY (ID)
+ )CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+  
+  CREATE TABLE STUDENT (
+  ID 		INT				NOT NULL,
+  first		VARCHAR(15),
+  last		VARCHAR(15),
+  major		VARCHAR(20),
+  PRIMARY KEY (ID)
+  )CHARACTER SET utf8mb4
+   COLLATE utf8mb4_unicode_ci;
+   
+  CREATE TABLE COURSE (
+  catnum 		INT 	NOT NULL,
+  description	CLOB,
+  ge_area		CLOB,
+  units			CHAR(1),
+  PRIMARY KEY (catnum)
+  )CHARACTER SET 'utf8mb4'
+   COLLATE 'utf8mb4_unicode_ci';
+  
+   
+  CREATE TABLE STUDENT_EMAIL (
+  ID 		INT				NOT NULL,
+  email		VARCHAR(30)		NOT NULL,
+  PRIMARY KEY (ID, email),
+  FOREIGN KEY (ID) REFERENCES STUDENT(ID)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT
+  )CHARACTER SET 'utf8mb4'
+   COLLATE 'utf8mb4_unicode_ci';
+  
+  CREATE TABLE PROF_EMAIL (
+  ID 		INT				NOT NULL,
+  email		VARCHAR(30)		NOT NULL,
+  PRIMARY KEY (ID, email),
+  FOREIGN KEY (ID) REFERENCES PROFESSOR(ID)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT
+  )CHARACTER SET 'utf8mb4'
+   COLLATE 'utf8mb4_unicode_ci';
+  
+  CREATE TABLE SECTION (
+  catnum 	INT				NOT NULL,
+  sectnum	INT				NOT NULL,
+  semester	VARCHAR(10)		NOT NULL,
+  room_num	INT,
+  prof_ID	INT				NOT NULL,
+  PRIMARY KEY (sectnum),
+  UNIQUE(catnum),
+  UNIQUE(semester),
+  FOREIGN KEY(catnum) REFERENCES COURSE(catnum),
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT,
+  FOREIGN KEY(prof_ID) REFERENCES PROFESSOR(ID)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT
+  )CHARACTER SET 'utf8mb4'
+   COLLATE 'utf8mb4_unicode_ci';
+ 
+  CREATE TABLE ENROLLED (
+  studentid 	INT			NOT NULL,
+  catnum		INT			NOT NULL,
+  sectnum		INT			NOT NULL,
+  semester		VARCHAR(15)	NOT NULL,
+  grade			CHAR(1),
+  rating		VARCHAR(2),
+  PRIMARY KEY (studentid, catnum, sectnum, semester),
+  FOREIGN KEY (studentid) REFERENCES STUDENT(ID)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT,
+  FOREIGN KEY (catnum) REFERENCES SECTION(catnum)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT,
+  FOREIGN KEY (sectnum) REFERENCES SECTION(sectnum)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT,
+  FOREIGN KEY (semester) REFERENCES SECTION(semester)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT
+  )CHARACTER SET 'utf8mb4'
+   COLLATE 'utf8mb4_unicode_ci';
+   
+  INSERT INTO PROFESSOR(ID, first, last)
+  VALUES ('1234567', 'John', 'Smith');
+  
+  INSERT INTO STUDENT(ID, first, last)
+  VALUES ('1122334', 'Trevor', 'Davis');
+  
+  INSERT INTO COURSE(catnum, description, ge_area, units)
+  VALUES ('12345', 'The detailed history of computers and how they operate.', 'A', '5');
+  
+  INSERT INTO PROF_EMAIL(ID, email)
+  VALUES ('1234567', 'Johnsmith@csus.edu');
+  
+  INSERT INTO STUDENT_EMAIL(ID, email)
+  VALUES ('1122334', 'tdavis4@csus.edu');
+   
+  INSERT INTO SECTION(catnum, sectnum, semester, room_num, prof_ID)
+  VALUES ('12345', '55555', 'FALL 2020', '45', '1234567');
+  
+  INSERT INTO ENROLLED(studentid, catnum, sectnum, semester, grade, rating)
+  VALUES ('1122334','12345', '55555', 'FALL 2020', 'A', '7');
+  
+  UPDATE SECTION SET room_num = 15 WHERE sectnum = 55555;
+  
+  DELETE FROM STUDENT WHERE ID = 1122334;
+  
+  DROP TABLE IF EXISTS ENROLLED;
+  
+  DROP TABLE IF EXISTS SECTION;
+  
+  DROP TABLE IF EXISTS PROF_EMAIL;
+  
+  DROP TABLE IF EXISTS STUDENT_EMAIL;
+  
+  DROP TABLE IF EXISTS COURSE;
+  
+  DROP TABLE IF EXISTS STUDENT;
+  
+  DROP TABLE IF EXISTS PROFESSOR;
